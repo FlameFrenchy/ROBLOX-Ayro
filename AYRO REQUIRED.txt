@@ -1,0 +1,7 @@
+## Ayro must be located in
+StaterPack
+
+## How to use
+After installing you'll need to play test and change the Target location (Workspace by default) to something else,
+
+**YOU CAN ALSO PUT MULTIPLE FOLDERS**
