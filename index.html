@@ -4,48 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayro | Documentation</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --background: #ffffff;
+            --text: #1f2937;
+            --surface: #f3f4f6;
+            --border: #e5e7eb;
+        }
+
+        .dark {
+            --background: #111827;
+            --text: #f3f4f6;
+            --surface: #1f2937;
+            --border: #374151;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            padding: 2rem;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            margin-left: 250px;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            margin: 2rem 0 1rem;
+            padding-top: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            padding-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        footer {
+            margin-left: 250px;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            main, footer {
+                margin-left: 0;
+            }
+
+            .theme-toggle {
+                top: auto;
+                bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#about">About ROBLOX-Ayro</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#target-selection">Target Selection</a></li>
+        </ul>
+    </nav>
+
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        🌓 Toggle theme
+    </button>
    
     <main>
-        <h2>About ROBLOX-Ayro</h2>
-        <p>Ayro is a FREE to use System that makes Aiming better for Consoles & Phone players</p>
-        <h1>
-            How to install
-        </h1>
-        <p> To start and install you'll need a few Objects</p>
-        <p>
-            LocalScript (Call it whatever you want, or just Ayro)
-            | AyroTeamKilling (BoolValue, Default: FALSE) - Checking for teams and if they are not on your team
-            | AyroTargetMode (StringValue, Default: DISTANCEBASED) - Used for choosing the Aiming targets
-            | AyroShowHealth (BoolValue, Default: FALSE) - Shows Ayro's Target about it's health
-            | AyroRange (NumberValue, Default: 60 (= 6.0 studs))
-            | AyroPredictMovement (BoolValue, DEFAULT: FALSE) - NOT USED YET (Only available in a testing version that i have access)
-        </p>
-        <p>
-            Or you can use a Package Link: 128496506090743
-        </p>
+        <section id="about">
+            <h2>About ROBLOX-Ayro</h2>
+            <p>Ayro is a FREE to use System that makes Aiming better for Consoles & Phone players</p>
+        </section>
 
-        <h1>
-            How does Ayro works and Enables itself?
-        </h1>
-        <p>
-            Ayro is dependant of if you have No KB plugged in OR that you have a controller
-        </p>
-        <p>
-            it will turn smoothly your camera to your opponent
-        </p>
-        <h2>
-            How does it chooses your target?
-        </h2>
-        <p>
-            As explained in the "How to Install" segment, you have the RANGE and Target mode options
-            and it chooses via your target mode and it's configs and then will do a loop between all targets in certains folders (thanks to inside the code you have ListTarget thats a table btw)
+        <section id="installation">
+            <h1>How to Install</h1>
+            <p>To start and install you'll need a few Objects:</p>
             
-        </p>
+            <div class="code-block">
+                <p>• LocalScript (Name it whatever you want, or just Ayro)</p>
+                <p>• AyroTeamKilling (BoolValue, Default: FALSE)</p>
+                <p class="indent">- Checking for teams and if they are not on your team</p>
+                <p>• AyroTargetMode (StringValue, Default: DISTANCEBASED)</p>
+                <p class="indent">- Used for choosing the Aiming targets</p>
+                <p>• AyroShowHealth (BoolValue, Default: FALSE)</p>
+                <p class="indent">- Shows Ayro's Target about it's health</p>
+                <p>• AyroRange (NumberValue, Default: 60 (= 6.0 studs))</p>
+                <p>• AyroPredictMovement (BoolValue, DEFAULT: FALSE)</p>
+                <p class="indent">- NOT USED YET (Only available in testing version)</p>
+            </div>
+
+            <p>Or you can use a Package Link: <code>128496506090743</code></p>
+        </section>
+
+        <section id="how-it-works">
+            <h1>How does Ayro Work and Enable itself?</h1>
+            <p>Ayro is dependent on whether you have:</p>
+            <ul>
+                <li>No keyboard plugged in, OR</li>
+                <li>A controller connected</li>
+            </ul>
+            <p>It will turn your camera smoothly to your opponent.</p>
+        </section>
+
+        <section id="target-selection">
+            <h2>How does it choose your target?</h2>
+            <p>
+                As explained in the "How to Install" segment, you have the RANGE and Target mode options.
+                It chooses via your target mode and its configs, then will loop between all targets in certain folders
+                (thanks to ListTarget table inside the code).
+            </p>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2025 FlameFrenchy. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Set initial theme based on system preference
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
