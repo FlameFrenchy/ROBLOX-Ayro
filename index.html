@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>Ayro | Documentation</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to FlameFrenchy's GitHub Page</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+   
     <main>
         <h2>About ROBLOX-Ayro</h2>
-        <p>Ayro is a FREE to use System that makes Aiming better for Consoles & Phone players. It will auto Aim Smoothly towards the Closest target in 6 studs (60).</p>
-        <p><strong>However</strong> it may get FLAGGED by anti-cheats, Please be aware!</p>
+        <p>Ayro is a FREE to use System that makes Aiming better for Consoles & Phone players</p>
+        <h1>
+            How to install
+        </h1>
+        <p> To start and install you'll need a few Objects</p>
+        <p>
+            LocalScript (Call it whatever you want, or just Ayro)
+            | AyroTeamKilling (BoolValue, Default: FALSE) - Checking for teams and if they are not on your team
+            | AyroTargetMode (StringValue, Default: DISTANCEBASED) - Used for choosing the Aiming targets
+            | AyroShowHealth (BoolValue, Default: FALSE) - Shows Ayro's Target about it's health
+            | AyroRange (NumberValue, Default: 60 (= 6.0 studs))
+            | AyroPredictMovement (BoolValue, DEFAULT: FALSE) - NOT USED YET (Only available in a testing version that i have access)
+        </p>
+        <p>
+            Or you can use a Package Link: 128496506090743
+        </p>
+
+        <h1>
+            How does Ayro works and Enables itself?
+        </h1>
+        <p>
+            Ayro is dependant of if you have No KB plugged in OR that you have a controller
+        </p>
+        <p>
+            it will turn smoothly your camera to your opponent
+        </p>
+        <h2>
+            How does it chooses your target?
+        </h2>
+        <p>
+            As explained in the "How to Install" segment, you have the RANGE and Target mode options
+            and it chooses via your target mode and it's configs and then will do a loop between all targets in certains folders (thanks to inside the code you have ListTarget thats a table btw)
+            
+        </p>
     </main>
     <footer>
         <p>&copy; 2025 FlameFrenchy. All rights reserved.</p>
